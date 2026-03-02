@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Agents: The Future of AI Autonomy - Yash Maheshwari</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .article-header {
+            text-align: center;
+            padding: 8rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            flex-wrap: wrap;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1d5db;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin: 3rem 0 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 2.5rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .article-content pre {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .article-content code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #00d9ff;
+            font-size: 0.9rem;
+        }
+
+        .article-content pre code {
+            color: #e0e0e0;
+            background: none;
+            padding: 0;
+        }
+
+        .article-content blockquote {
+            border-left: 3px solid #00d9ff;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #a0a0a0;
+            background: rgba(0, 217, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.1);
+            color: #00d9ff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a9eff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .bottom-cta-wrapper {
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .bottom-cta-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 1px;
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .bottom-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: #3b82f6;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .bottom-cta-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 4rem 0 2rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-container {
+                padding: 0 1rem 4rem;
+            }
+
+            .article-meta {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <nav class="floating-nav">
+        <div class="nav-logo">
+            <a href="../index.html">&lt;/&gt; Yash Maheshwari</a>
+        </div>
+        <ul class="nav-links-container">
+            <li class="nav-indicator"></li>
+            <li><a href="../index.html#hero" class="nav-link">Home</a></li>
+            <li><a href="../index.html#about" class="nav-link">About</a></li>
+            <li><a href="../index.html#skills-grid" class="nav-link">Skills</a></li>
+            <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+            <li><a href="../blogs.html" class="nav-link active">Blogs</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="../index.html#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+    </nav>
+
+    <div class="article-container">
+        <div style="margin-top: 120px; margin-bottom: 20px;">
+            <a href="../blogs.html" class="back-button">← Back to All Blogs</a>
+        </div>
+
+        <article class="article-content">
+            <header class="article-header">
+                <h1>Deep Agents: Why Most AI Agents Are Shallow (And How to Fix It)</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> Jan 24, 2026</span>
+                    <span><i class="far fa-clock"></i> 22 min read</span>
+                    <span><i class="far fa-user"></i> Yash Maheshwari</span>
+                </div>
+            </header>
+
+            <p class="article-tag">AI / Machine Learning / Agents</p>
+
+            <p style="font-size: 1.25rem; color: #a0a0a0; margin-bottom: 2rem;">
+                A complete guide to building AI agents that actually plan, delegate, and remember. Learn the architecture behind Claude Code, Deep Research, and how to build production-ready deep agents with LangChain.
+            </p>
+
+            <img src="https://via.placeholder.com/800x400/1a1a2e/00d9ff?text=Deep+Agents+Hero" alt="Deep Agents Architecture">
+
+            <h2 id="agents-101">AI Agents 101: The 60-Second Primer</h2>
+
+            <p><strong>New to AI agents? Here's what you need to know:</strong></p>
+
+            <p><strong>What's an AI agent?</strong> An LLM (like ChatGPT) that can use <em>tools</em> to complete tasks. Tools are functions the LLM can call—search Google, run Python code, query databases, send emails.</p>
+
+            <p><strong>How do they work?</strong> Agents follow a simple loop called the <strong>ReAct pattern</strong> (Reasoning + Acting):</p>
+
+            <pre><code class="language-text">1. Think: "I need to search for quantum computing news"
+2. Act: Call search_tool("quantum computing 2024")
+3. Observe: Read the search results
+4. Think: "Now I have the info, I can answer"
+5. Respond: Provide answer to user
+
+Repeat until task is complete.</code></pre>
+
+            <p><strong>The ReAct loop works great for simple tasks</strong> like "What's the weather in Tokyo?" or "Summarize this article."</p>
+
+            <h2 id="the-problem">The Problem: Why Most Agents Are Shallow</h2>
+
+            <p>You build an AI agent. It can search the web, analyze data, even write code. You give it a task: "Research the top 5 AI companies hiring in San Francisco, analyze their job openings, and write personalized cover letters for each."</p>
+
+            <p>Your agent searches once. Gets overwhelmed. Writes one generic cover letter. Forgets companies 2 through 5. Fails completely.</p>
+
+            <p>Sound familiar? This is what I call a "shallow" agent. It's just reacting, not thinking.</p>
+
+            <p>The difference between success and failure? Four key capabilities:</p>
+            <ol>
+                <li><strong>Planning</strong> - Breaks down the task before starting</li>
+                <li><strong>File system</strong> - Manages context by offloading to files</li>
+                <li><strong>Subagents</strong> - Delegates specialized work</li>
+                <li><strong>Detailed prompts</strong> - Knows how to use these capabilities</li>
+            </ol>
+
+            <h2 id="what-makes-deep">What Makes an Agent "Deep"?</h2>
+
+            <img src="https://via.placeholder.com/800x400/1a1a2e/00d9ff?text=Deep+Agent+Architecture" alt="The Four Pillars of Deep Agents">
+
+            <h3>Shallow Agent Architecture</h3>
+
+            <pre><code class="language-python"># Traditional "shallow" agent
+def shallow_agent(task):
+    history = []
+    done = False
+    
+    while not done:
+        # Everything crammed into one context
+        thought = llm.generate(task + history)
+        action = select_tool(thought)
+        result = execute(action)
+        
+        # Context grows unbounded
+        history.append(result)
+        
+        # If the result indicates completion
+        if result.is_finished:
+            done = True
+        
+        # No plan, just reacting
+        # No way to delegate
+        # No persistent storage</code></pre>
+
+            <h3>Deep Agent Architecture</h3>
+
+            <pre><code class="language-python"># "Deep" agent with planning, files, and subagents
+def deep_agent(task):
+    # First: Make a plan
+    todos = agent.write_todos(task)
+    
+    for subtask in todos:
+        if needs_deep_focus(subtask):
+            # Spawn subagent with isolated context
+            subagent = spawn_subagent(name="researcher", task=subtask)
+            result = subagent.run()
+            # Store in file system
+            filesystem.write(f"{subtask}.md", result)
+        else:
+            # Execute directly
+            result = execute_tools(subtask)
+        
+        # Adapt plan based on what we learned
+        todos = agent.update_todos(result)
+    
+    # Read all research files
+    research = filesystem.read_all("*.md")
+    
+    # Generate final output
+    return synthesize(research)</code></pre>
+
+            <h2 id="deep-agents-wild">Deep Agents in the Wild</h2>
+
+            <h3>Claude Code: The Inspiration</h3>
+
+            <p>Claude Code changed the game by using four key components:</p>
+            <ul>
+                <li><strong>Long, Detailed System Prompts:</strong> Comprehensive documents with explicit instructions.</li>
+                <li><strong>A TODO List Tool:</strong> A no-op tool that forces planning.</li>
+                <li><strong>Subagent Spawning:</strong> For context isolation.</li>
+                <li><strong>File System Access:</strong> Shared memory for collaboration.</li>
+            </ul>
+
+            <h3>The Four Pillars of Deep Agents</h3>
+
+            <p>Deep agents succeed because they combine:</p>
+
+            <h4>1. Planning Tools</h4>
+            <p>The most important tool does absolutely nothing. It just stores a list of strings. Yet it is crucial because it forces the agent to think before acting.</p>
+
+            <h4>2. File Systems</h4>
+            <p>Think of it like this: Your brain can't hold 100 research papers in active memory simultaneously. You take notes, organize them in folders, and reference them when needed. Agents need the same strategy.</p>
+
+            <h4>3. Subagents</h4>
+            <p>Like a project manager delegating to specialists—each with a clean workspace and focused task. This provides context isolation and allows specialized instructions.</p>
+
+            <h4>4. Detailed System Prompts</h4>
+            <p>Comprehensive documents with explicit step-by-step processes and examples. Without detailed prompts, agents would not be nearly as deep.</p>
+
+            <h2 id="production">Building Your First Deep Agent</h2>
+
+            <p>Here is how to build a production-ready research assistant:</p>
+
+            <pre><code class="language-python">from deepagents import create_deep_agent
+from tavily import TavilyClient
+
+# Create the agent
+research_agent = create_deep_agent(
+    model="anthropic:claude-sonnet-4-20250514",
+    tools=[internet_search, arxiv_search],
+    system_prompt="""You are an expert research orchestrator.
+    
+WORKFLOW:
+    1. PLAN: Write detailed TODOs
+    2. RESEARCH: Search extensively, store in files
+    3. ANALYZE: Delegate synthesis to analyst subagent
+    4. REPORT: Create final comprehensive answer"""
+)
+
+# Use it
+result = research_agent.invoke({
+    "messages": [{
+        "role": "user",
+        "content": "Research breakthroughs in AI reasoning"
+    }]
+})</code></pre>
+
+            <h2 id="comparison">Deep Agents vs Traditional Agents</h2>
+
+            <div style="overflow-x: auto; margin: 2rem 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid rgba(255,255,255,0.1);">
+                    <thead>
+                        <tr style="background: rgba(255,255,255,0.05);">
+                            <th style="padding: 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Capability</th>
+                            <th style="padding: 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Shallow Agent</th>
+                            <th style="padding: 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1);">Deep Agent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>Planning</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Reactive, no explicit plan</td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Proactive with TODO lists</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>Memory</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Conversation history only</td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Persistent file system</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>Context Management</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Everything in prompt</td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Offloaded to files</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>Delegation</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Cannot delegate</td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">Spawns specialized subagents</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>Success Rate (Complex)</strong></td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">~40%</td>
+                            <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">~85%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;"><strong>Cost/Time</strong></td>
+                            <td style="padding: 1rem;">Low / Fast</td>
+                            <td style="padding: 1rem;">High / Slower (but effective)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Key Insight:</strong> Deep agents cost 17x more but achieve 85% success on complex tasks vs 40% for traditional agents. Thoroughness implies cost.</p>
+
+            <h2 id="use-cases">Real-World Use Cases</h2>
+
+            <h3>1. Deep Research Assistant</h3>
+            <p>Detailed research on complex topics. Breaks down into subtopics, searches recursively, and synthesizes reports.</p>
+
+            <h3>2. Coding Assistant</h3>
+            <p>Manages complex coding projects with planning, implementation, testing, and refinement.</p>
+
+            <h3>3. Job Application Assistant</h3>
+            <p>Finds jobs, researches companies deeply, and writes highly personalized cover letters based on that research.</p>
+
+            <h2 id="conclusion">The Bottom Line</h2>
+
+            <ol>
+                <li><strong>Deep agents are not magic.</strong> They are traditional agents with architectural additions (Planning, Files, Subagents, Prompts).</li>
+                <li><strong>The algorithm is the same.</strong> The magic is in the surroundings.</li>
+                <li><strong>Use them for complexity.</strong> When quality matters more than speed.</li>
+            </ol>
+
+            <blockquote>
+                The perfect agent architecture does not exist. The one that solves your users' problems does.
+            </blockquote>
+
+            <div class="bottom-cta-wrapper">
+                <a href="../index.html#contact" class="bottom-cta-btn">
+                    <span>Discuss AI Strategy</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content" style="text-align: center; padding: 2rem;">
+            <div class="footer-logo">&lt;/&gt; Yash Maheshwari</div>
+            <p class="copyright">&copy; 2026 Built by Yash Maheshwari</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</body>
+</html>
