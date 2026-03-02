@@ -2,7 +2,7 @@
 let count = 0;
 const countElement = document.querySelector('.count');
 const preloader = document.querySelector('.preloader');
-const loaderDuration = 3000;
+const loaderDuration = 1000;
 const startTime = Date.now();
 
 if (countElement) {
