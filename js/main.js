@@ -196,6 +196,14 @@ if (marqueeContent) {
 /* ================= SKILLS COLORS ================= */
 document.querySelectorAll('.skill-card').forEach((card, i) => {
     card.style.setProperty('--glow-color', glowColors[i % glowColors.length]);
+
+    // Add touch event for mobile glow effect
+    card.addEventListener('touchstart', () => {
+        card.classList.add('skill-glow-active');
+    });
+    card.addEventListener('touchend', () => {
+        card.classList.remove('skill-glow-active');
+    });
 });
 
 /* ================= THEME TOGGLE ================= */
