@@ -225,6 +225,7 @@ if (themeToggleBtn && themeIcon) {
 /* ================= TYPEWRITER ================= */
 const roles = [
     'FrontEnd Developer',
+    'Machine Learning Enthusiast',
     'Graphic Designer',
     'UI/UX Geek',
     'Observer'

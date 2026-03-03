@@ -505,12 +505,13 @@ header.grid-12, section.grid-12 {
 
 .static-text {
     font-family: var(--font-heading);
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+    font-size: clamp(2rem, 2vw + 0.5rem, 1.5rem);
     letter-spacing: 2px;
     color: #c9d1d9;
 }
 
 .dynamic-container {
+    font-size: 30px;
     display: inline-grid;
     grid-template-columns: 1fr;
     align-items: baseline;
@@ -763,12 +764,12 @@ header.grid-12, section.grid-12 {
 
 .stat-box h3 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
 }
 
 .stat-box p {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: #888;
     letter-spacing: 1px;
 }
