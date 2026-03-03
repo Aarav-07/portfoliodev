@@ -360,6 +360,19 @@ ul {
     .nav-cta {
         display: none;
     }
+
+    .marquee-wrapper {
+        padding: 0.7rem 0 0.7rem 0;
+        overflow: visible;
+    }
+    .marquee-content span {
+        font-size: 1.3rem;
+        margin-right: 1rem;
+        line-height: 1.5rem;
+    }
+    .marquee-content {
+        min-width: 120vw;
+    }
 }
 
 .grid-wrapper {
