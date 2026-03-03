@@ -1318,6 +1318,15 @@ header.grid-12, section.grid-12 {
     }
 }
 
+@media (max-width: 480px) {
+    .footer-bottom {
+        padding-bottom: 4rem; /* Add extra space above navbar */
+    }
+    .footer-right .social-links {
+        margin-bottom: 2.5rem; /* Move social buttons up above navbar */
+    }
+}
+
 .reveal-text {
     opacity: 0;
     transform: translateY(30px);
