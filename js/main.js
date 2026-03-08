@@ -318,3 +318,48 @@ filterButtons.forEach(button => {
         });
     });
 });
+
+/* ================= VERCEL ANALYTICS ENGAGEMENT TRACKING ================= */
+// Helper to safely fire Vercel Analytics events (no-op if script not loaded yet)
+function trackEvent(name, props) {
+    if (typeof window.va === 'function') {
+        window.va('event', { name, ...props });
+    }
+}
+
+// Track when user scrolls into each major section (fires once per session)
+const trackedSections = new Set();
+const analyticsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const sectionId = entry.target.id;
+        if (trackedSections.has(sectionId)) return; // only fire once
+        trackedSections.add(sectionId);
+        trackEvent('section_view', { section: sectionId });
+    });
+}, { threshold: 0.3 });
+
+document
+    .querySelectorAll('header[id], section[id]')
+    .forEach(sec => analyticsObserver.observe(sec));
+
+// Track project modal opens
+document.querySelectorAll('.btn-view-project').forEach(btn => {
+    btn.addEventListener('click', e => {
+        const item = e.target.closest('.project-item');
+        if (!item) return;
+        trackEvent('project_view', { project: item.dataset.title || 'unknown' });
+    });
+});
+
+// Track resume download
+document.querySelectorAll('a[download]').forEach(link => {
+    link.addEventListener('click', () => {
+        trackEvent('resume_download', {});
+    });
+});
+
+// Track contact form submission
+document.querySelector('.contact-form')?.addEventListener('submit', () => {
+    trackEvent('contact_form_submit', {});
+});
