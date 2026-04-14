@@ -34,7 +34,21 @@ const navLinks = document.querySelectorAll('.nav-link');
 const navIndicator = document.querySelector('.nav-indicator');
 
 function updateNavIndicator(activeLink) {
-    if (!activeLink || !navIndicator || window.innerWidth <= 768) return;
+    if (!activeLink) return;
+
+    if (window.innerWidth <= 768) {
+        const navContainer = activeLink.closest('.nav-links-container');
+        if (navContainer) {
+            activeLink.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
+        return;
+    }
+
+    if (!navIndicator) return;
     navIndicator.style.width = `${activeLink.parentElement.offsetWidth}px`;
     navIndicator.style.transform = `translateX(${activeLink.parentElement.offsetLeft}px)`;
     navIndicator.classList.add('visible');
@@ -384,39 +398,4 @@ achTabs.forEach(tab => {
     });
 });
 
-/* ================= IMAGE LIGHTBOX MODAL ================= */
-const imageModal = document.getElementById('image-modal');
-const lightboxImg = document.getElementById('lightbox-img');
-const imageClose = document.querySelector('.image-close');
-
-const closeImageModal = () => {
-    if (imageModal) imageModal.classList.remove('active');
-};
-
-document.querySelectorAll('.clickable-photo').forEach(photo => {
-    photo.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (lightboxImg && imageModal) {
-            lightboxImg.src = photo.src;
-            imageModal.classList.add('active');
-        }
-    });
-});
-
-if (imageClose) {
-    imageClose.addEventListener('click', closeImageModal);
-}
-
-if (imageModal) {
-    imageModal.addEventListener('click', (e) => {
-        if (e.target === imageModal) {
-            closeImageModal();
-        }
-    });
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && imageModal && imageModal.classList.contains('active')) {
-        closeImageModal();
-    }
-});
+/* Lightbox logic handled inline in HTML */
