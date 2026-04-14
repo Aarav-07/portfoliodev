@@ -363,3 +363,60 @@ document.querySelectorAll('a[download]').forEach(link => {
 document.querySelector('.contact-form')?.addEventListener('submit', () => {
     trackEvent('contact_form_submit', {});
 });
+
+/* ================= ACHIEVEMENTS FILTER ================= */
+const achTabs = document.querySelectorAll('.ach-tab');
+const achCards = document.querySelectorAll('.achievement-card');
+
+achTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        achTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.getAttribute('data-ach-filter');
+        achCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-ach-category') === filter) {
+                card.classList.remove('ach-hide');
+            } else {
+                card.classList.add('ach-hide');
+            }
+        });
+    });
+});
+
+/* ================= IMAGE LIGHTBOX MODAL ================= */
+const imageModal = document.getElementById('image-modal');
+const lightboxImg = document.getElementById('lightbox-img');
+const imageClose = document.querySelector('.image-close');
+
+const closeImageModal = () => {
+    if (imageModal) imageModal.classList.remove('active');
+};
+
+document.querySelectorAll('.clickable-photo').forEach(photo => {
+    photo.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (lightboxImg && imageModal) {
+            lightboxImg.src = photo.src;
+            imageModal.classList.add('active');
+        }
+    });
+});
+
+if (imageClose) {
+    imageClose.addEventListener('click', closeImageModal);
+}
+
+if (imageModal) {
+    imageModal.addEventListener('click', (e) => {
+        if (e.target === imageModal) {
+            closeImageModal();
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal && imageModal.classList.contains('active')) {
+        closeImageModal();
+    }
+});
