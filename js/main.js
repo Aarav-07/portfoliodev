@@ -81,7 +81,9 @@ document.querySelectorAll('.btn-view-project').forEach(btn => {
         document.getElementById('modal-desc').textContent = item.dataset.description;
         document.getElementById('modal-img').src = item.dataset.image;
         document.getElementById('modal-github').href = item.dataset.github;
-        document.getElementById('modal-more').href = item.dataset.live;
+        const liveLink = document.getElementById('modal-more');
+        liveLink.href = item.dataset.live || '#';
+        liveLink.hidden = !item.dataset.live;
         
         const tech = document.getElementById('modal-tech');
         tech.innerHTML = '';
